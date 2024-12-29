@@ -5,11 +5,9 @@ import torch.nn.functional as F
 # load saved models and tokenizers
 device = torch.device('cpu')
 model_en = BertForSequenceClassification.from_pretrained("models/BERT_filter_en").to(device)
-tokenizer_en = BertTokenizer.from_pretrained('models/BERT_tokenizer') # tokenizer
-# model_en.save_pretrained('BERT_filter_en') # save the model configuration and weights
+tokenizer_en = BertTokenizer.from_pretrained('models/Tokenizer_en') # tokenizer
 model_gr = AutoModelForSequenceClassification.from_pretrained("models/BERT_filter_gr").to(device)
-tokenizer_gr = AutoTokenizer.from_pretrained("models/Greek_BERT_tokenizer")
-# model_gr.save_pretrained('BERT_filter_gr') # save the model configuration and weights
+tokenizer_gr = AutoTokenizer.from_pretrained("models/Tokenizer_gr")
 
 def model_logic(language,message):
     if language == 'en':
