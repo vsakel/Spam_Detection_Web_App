@@ -1,6 +1,6 @@
 # BERT based Spam Detection Web Application
 - Developed a RESTful API using Flask to integrate BERT classification model.
-- Used BERT models, that fine tuned for spam detection task in Spam_filter_Thesis and there are available on https://huggingface.co/vsak
+- Used BERT models, that fine tuned for spam detection task in Development of Spam Filters Using Artificial Intelligence Techniques Thesis and there are available on https://huggingface.co/vsak
 
 # Download the models and save them locally
 - Run load_model.py script
