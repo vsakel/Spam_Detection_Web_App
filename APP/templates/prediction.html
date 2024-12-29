@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='progress_bar.css') }}">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/fill">Test the models</a>
+        <a class="active" href="/prediction">Model's prediction</a>
+    </div>  
+    <h1>Model's Prediction</h1>
+
+    <div class="progress-bar-container">
+        {% if prediction <= 50 %}
+            <div class="progress-bar-legit" style="width: {{ prediction }}%;"></div>
+            <h3>{{ prediction }}% propability of message being spam, it looks legit</h3>
+        {% elif prediction <= 60 %}
+            <div class="progress-bar-suspicious" style="width: {{ prediction }}%;"></div>
+            <h3>{{ prediction }}% propability of message being spam, it looks suspicious </h3>
+        {% elif prediction <= 75 %}
+            <div class="progress-bar-warning" style="width: {{ prediction }}%;"></div>
+            <h3>{{ prediction }}% probability of message being spam, WARNING</h3>
+        {% elif prediction <= 100 %}
+            <div class="progress-bar-spam" style="width: {{ prediction }}%;"></div>
+            <h3>{{ prediction }}% probability of message being spam, DANGER</h3>
+        {% else %}
+            <h3>Something went wrong in calculation of spam probability</h3>
+        {% endif %}
+    </div>
+</body>
+</html>

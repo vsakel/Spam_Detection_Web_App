@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='welcome_style.css') }}">
+    <title>Spam Detection App</title>
+</head>
+<body>
+
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/fill">Test the models</a>
+        <a href="/prediction">Model's prediction</a>
+    </div>
+    <h1>Welcome to Spam Detection Application</h1>
+    <p>This application leverages a language model, called BERT, 
+        to detect spam in text messages. 
+        BERT’s predictions can be used as a virtual consultant, 
+        providing insights for identifying spam messages. The app supports two models 
+        tailored for different languages: one for English and another for Greek messages.</p>
+    <form action="/fill">
+        <button type="submit">Get Started</button>
+    </form>
+
+
+
+</body>
+</html>

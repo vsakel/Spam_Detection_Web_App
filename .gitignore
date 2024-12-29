@@ -1,0 +1,3 @@
+virtual_env/
+API/__pycache__
+API/models

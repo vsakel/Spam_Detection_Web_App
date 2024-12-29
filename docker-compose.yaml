@@ -1,0 +1,22 @@
+services:
+  api:
+    env_file: ./.env
+    build:
+      context: ./API  # Build context is the current directory
+    ports:
+      - $API_LOCAL_PORT:$API_DOCKER_PORT 
+    networks:
+      - app-api-network
+  app:
+    env_file: ./.env
+    build:
+      context: ./APP  
+    ports:
+      - $APP_LOCAL_PORT:$APP_DOCKER_PORT  
+    depends_on:
+      - api
+    networks:
+      - app-api-network
+
+networks:
+  app-api-network:
