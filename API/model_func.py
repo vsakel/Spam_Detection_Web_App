@@ -5,8 +5,10 @@ import torch.nn.functional as F
 # load saved models and tokenizers
 device = torch.device('cpu')
 model_en = BertForSequenceClassification.from_pretrained("models/BERT_filter_en").to(device)
+model_en.eval() # set to evaluation mode
 tokenizer_en = BertTokenizer.from_pretrained('models/Tokenizer_en') # tokenizer
 model_gr = AutoModelForSequenceClassification.from_pretrained("models/BERT_filter_gr").to(device)
+model_gr.eval() # set to evaluation mode
 tokenizer_gr = AutoTokenizer.from_pretrained("models/Tokenizer_gr")
 
 def model_logic(language,message):

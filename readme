@@ -1,0 +1,18 @@
+We make a python application with flask, we use flask to create a web application that acts as a backend service, that uses an external api for model's prediction. 
+We make api calls to specific url that host the api of model in order to use it.
+Implementing this method, model's capabilities are reachable from different
+frontend users (web apps, mobile apps). 
+Of course in case of deployment on a cloud service so it being expose via a public url and it being accessible over the internet.
+
+docker compose logic:
+in docker compose with containers in the same network the communication between them achieved with internal dns 
+names of services
+so we use dockers compose internal dns name (api) for api service in order to connect to it and send
+requests from app container 
+we dont use localhost that refer to localhost of container
+from outside world we can send a request (with postman) in http://localhost:5001/api_prediction
+
+how to run it :
+
+1) do build the base image that has the requirements run docker build -t base-image:latest . 
+2) docker compose up to build the multi container app

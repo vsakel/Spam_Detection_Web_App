@@ -24,7 +24,7 @@ def fill():
 
 @app.route('/prediction', methods=['POST','GET'])
 def call_api():
-    # if there is no post request, there is no text input so we dont call the api 
+    # if there is no POST request, there is no text input so we dont call the api, and render no_prediction.html 
     if request.method == 'POST':
         # Get form data
         language = request.form.get('lang')
