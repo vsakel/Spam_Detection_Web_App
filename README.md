@@ -5,8 +5,6 @@
 # Download the models and save them locally
 - Run load_model.py script
 
-# Docker compose is a tool to build and manage a multicontainer architecture.
-
 #  Build a multicontainer architecture with Docker
 - Base app (frontend) runs on 5000 port and models API runs on 5001 port.
 - Build the base image that has the requirements. Run docker build -t base-image:latest . 
